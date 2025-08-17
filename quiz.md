@@ -1,13 +1,12 @@
 # General knowledge
 
 ## Class or Struct
-> Give the main differences between a `struct` and a `class` in .Net.
+Give the main differences between a `struct` and a `class` in .Net.
 
 Struct is a value type, while class is a reference type. Struct will be allocated on the stack, while class will beallocated on the heap.
 This means that when a struct is passed around, it is copied, whereas a class is passed by reference (only the reference will be copied not the object it points to). 
 Structs are typically used for small data structures that do not require inheritance, 
 while classes are used for larger and more complex objects.
-
 
 ## Variance
 Can you explain the advantages of covariance on a Generic interface ? Give an example.
@@ -29,9 +28,12 @@ Give at least 2 examples to increment a shared variable in a thread safe manner.
 
 Please, see/run the IncrementTestProject for a complete example of how to increment a shared variable in a thread-safe manner using locks and Interlocked operations.
 
-
 # Monad
-Given the following unit tests:namespace Monad;
+Given the following unit tests:
+```
+csharp
+
+namespace Monad;
 
 public class OptionTests
 {
@@ -117,6 +119,9 @@ public class OptionTests
 }
 ```
 Write the `Option` and `Option<T>` types that implement the code making these tests run successfully.
+
+Please see the `Option.cs` file for a complete implementation of the `Option` and `Option<T>` types that satisfy the tests provided.
+
 
 # Refactoring
 Given the following software code, propose a refactored solution for this piece of code.
