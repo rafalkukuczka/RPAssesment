@@ -11,15 +11,24 @@ while classes are used for larger and more complex objects.
 
 ## Variance
 Can you explain the advantages of covariance on a Generic interface ? Give an example.
+
+Covariance allows a method to return a more derived type than that specified by the generic parameter. 
+This is particularly useful when dealing with collections of data, 
+as it allows for a more flexible and reusable code.
+
 In what situation would you use contravariance on a Generic interface ? Give an example.
+
+Contravariance allows a method to accept parameters of less derived types than that specified by the generic parameter. 
+This is useful when you want to write a generic method that can work with a family of types in a type hierarchy. 
+For example, if you have a method that works with a base class, you can use contravariance to allow it to also work with any derived classes.
+
+Please see the VarianceTests.cs file for a complete examples of covariance and contravariance.
 
 ## Thread safe
 Give at least 2 examples to increment a shared variable in a thread safe manner.
 
 # Monad
-Given the following unit tests:
-```csharp
-namespace Monad;
+Given the following unit tests:namespace Monad;
 
 public class OptionTests
 {
