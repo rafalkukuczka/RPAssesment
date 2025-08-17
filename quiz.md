@@ -1,7 +1,13 @@
 # General knowledge
 
 ## Class or Struct
-Give the main differences between a `struct` and a `class` in .Net.
+> Give the main differences between a `struct` and a `class` in .Net.
+
+Struct is a value type, while class is a reference type. Struct will be allocated on the stack, while class will beallocated on the heap.
+This means that when a struct is passed around, it is copied, whereas a class is passed by reference (only the reference will be copied not the object it points to). 
+Structs are typically used for small data structures that do not require inheritance, 
+while classes are used for larger and more complex objects.
+
 
 ## Variance
 Can you explain the advantages of covariance on a Generic interface ? Give an example.
