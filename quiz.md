@@ -27,6 +27,9 @@ Please see the VarianceTests.cs file for a complete examples of covariance and c
 ## Thread safe
 Give at least 2 examples to increment a shared variable in a thread safe manner.
 
+Please, see/run the IncrementTestProject for a complete example of how to increment a shared variable in a thread-safe manner using locks and Interlocked operations.
+
+
 # Monad
 Given the following unit tests:namespace Monad;
 
