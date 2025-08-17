@@ -203,3 +203,6 @@ public class EmployeeProcessor
 }
 ```
 
+Please see the `EmployeeTestProject` for a refactored solution of the provided code. The startup might be found in the API folder. 
+The unit tests are located in the `EmployeeTestProject.Payroll.Tests` folder.
+
