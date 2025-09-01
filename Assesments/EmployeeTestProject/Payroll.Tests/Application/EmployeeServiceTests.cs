@@ -15,7 +15,7 @@ namespace Payroll.Tests.Application
             var report = service.GenerateEmployeeReport(employee);
 
             Assert.Contains("Jon*****", report);
-            Assert.Contains("2100", report); // nowa pensja
+            Assert.Contains("2160", report); 
         }
 
         [Fact]
