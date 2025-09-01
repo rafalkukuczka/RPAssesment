@@ -26,7 +26,10 @@ namespace EmployeeTestProject.Payroll.Domain
         public string MaskName()
         {
             var visible = Name.Substring(0, 3);
-            return visible + new string('*', Name.Length - 3);
+            
+            StringBuilder maskedName = new StringBuilder(visible);
+            return maskedName.Append('*', Name.Length - 3).ToString();
+
         }
 
         public decimal CalculateNewSalary()
