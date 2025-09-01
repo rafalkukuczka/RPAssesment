@@ -31,27 +31,23 @@ namespace EmployeeTestProject.Payroll.Domain
             return maskedName.Append('*', Name.Length - 3).ToString();
 
         }
-
+        
         public decimal CalculateNewSalary()
         {
-            decimal newSalary = 0;
-            if (Type == EmployeeType.Trainee) // Trainee
+            int effectiveYears = Years > 5 ? 5 : Years;
+
+            return Type switch
             {
-                newSalary = Salary / 100 + Salary;
-            }
-            if (Type ==  EmployeeType.Junior) // Junior
-            {
-                newSalary = (Salary * 5 / 100) + (Salary * Years > 5 ? 5 : Years) / 100 + Salary;
-            }
-            if (Type == EmployeeType.Senior) // Senior
-            {
-                newSalary = (Salary * Years > 5 ? 5 : Years) / 100 + 1.1M * Salary;
-            }
-            if (Type == EmployeeType.Manager) // Manager
-            {
-                newSalary = (Salary * Years > 5 ? 5 : Years) / 100 + Salary + (Salary * 15 / 100);
-            }
-            return newSalary;
+                EmployeeType.Trainee => Salary * 1.01M,
+
+                EmployeeType.Junior => Salary * (1.05M + effectiveYears / 100M),
+
+                EmployeeType.Senior => Salary * (1.1M + effectiveYears / 100M),
+
+                EmployeeType.Manager => Salary * (1.15M + effectiveYears / 100M),
+
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
     }
 }
