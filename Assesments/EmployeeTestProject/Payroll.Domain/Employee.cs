@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeTestProject.Payroll.Domain
 {
-    public enum EmployeeType
-    {
-        Trainee = 1,
-        Junior = 2,
-        Senior = 3,
-        Manager = 4
-    }
+    
 
     public class Employee
     {
