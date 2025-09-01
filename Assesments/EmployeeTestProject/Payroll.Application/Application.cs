@@ -7,11 +7,13 @@ namespace EmployeeTestProject.Payroll.Application
         public string GenerateEmployeeReport(Employee employee)
         {
             var newSalary = employee.CalculateNewSalary();
-            return $"Employee Name: {employee.MaskName()}, " +
-                   $"Type: {employee.Type}, " +
-                   $"Years: {employee.Years}, " +
-                   $"Salary: {employee.Salary}, " +
-                   $"New Salary: {newSalary}";
+            return $"""
+                    Employee Name: {employee.MaskName()},
+                    Type: {employee.Type},
+                    Years: {employee.Years},
+                    Salary: {employee.Salary},
+                    New Salary: {newSalary}
+                    """;
         }
 
         public string GenerateReport(List<Employee> employees)
